@@ -252,7 +252,7 @@ export default function HomeView({ setActiveTab, openQuoteForPlan }: HomeViewPro
                   </div>
                   <div>
                     <h4 className="text-xs font-bold text-slate-800">Call Me</h4>
-                    <p className="text-[10px] text-slate-500 mt-0.5">+91 98765 43210</p>
+                    <p className="text-[10px] text-slate-500 mt-0.5">+91 94233 83890</p>
                   </div>
                 </div>
                 <ArrowRight className="h-4 w-4 text-slate-400" />
