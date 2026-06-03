@@ -51,8 +51,8 @@ export default function Header({
         <div className="flex items-center space-x-4" id="header-right-actions">
           {/* Agent/Advisor Info */}
           <div className="hidden sm:flex flex-col text-right pr-4 border-r border-slate-200">
-            <span className="text-sm font-extrabold text-slate-800">Sahiti Kotturty</span>
-            <span className="text-[11px] font-medium text-blue-600 bg-blue-50 px-2 py-0.5 rounded-full mt-0.5 inline-block">
+            <span className="text-sm font-bold text-blue-950">Sahiti Kotturty</span>
+            <span className="text-[11px] text-blue-900/80 mt-0.5 font-medium">
               RPD Emp code : VA 10044791
             </span>
           </div>
