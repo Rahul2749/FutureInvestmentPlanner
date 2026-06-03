@@ -1,0 +1,6 @@
+{
+  "name": "Bajaj Allianz Life Partner Portal",
+  "description": "Premium strategic retail partner and insurance advisory platform. Experience Bajaj Allianz Life's products, step-by-step partner enrolment, live premium calculators, and advisor maps.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
