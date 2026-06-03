@@ -30,20 +30,28 @@ export default function Header({
         
         {/* Logo and Branding Section */}
         <div 
-          className="flex cursor-pointer items-center space-x-3" 
+          className="flex cursor-pointer items-center" 
           onClick={() => setActiveTab('home')}
           id="header-brand-container"
         >
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-600 text-white shadow-xs">
-            <ShieldCheck className="h-6 w-6" />
-          </div>
-          <div className="flex flex-col">
-            <span className="font-sans text-lg font-extrabold tracking-tight text-blue-900 sm:text-xl">
-              BAJAJ <span className="text-orange-500 font-bold">Life Insurance</span>
-            </span>
-            <span className="font-mono text-[9px] font-medium uppercase tracking-widest text-slate-400">
-              Life Goals Partner
-            </span>
+          <div className="flex items-center space-x-2">
+            {/* Blue Box with Bajaj Logo mark and text */}
+            <div className="flex flex-col items-center justify-center bg-[#005AAA] text-white w-10 h-10 shrink-0 shadow-sm">
+              <svg width="20" height="12" viewBox="0 0 24 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 0C12 0 16 4 20 4C24 4 24 10 20 10C16 10 12 6 12 6C12 6 8 10 4 10C0 10 0 4 4 4C8 4 12 0 12 0Z" fill="currentColor"/>
+              </svg>
+              <span className="text-[7px] font-bold tracking-wider mt-0.5">BAJAJ</span>
+            </div>
+            {/* LIFE INSURANCE text */}
+            <div className="flex flex-col">
+              <div className="text-[#005AAA] text-[22px] font-bold tracking-tight leading-none">
+                LIFE
+              </div>
+              {/* Subtitle */}
+              <div className="text-[#005AAA] text-[8px] font-bold tracking-widest mt-1">
+                LIFE GOALS. DONE.
+              </div>
+            </div>
           </div>
         </div>
 

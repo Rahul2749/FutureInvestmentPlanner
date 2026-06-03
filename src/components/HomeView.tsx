@@ -25,24 +25,24 @@ export default function HomeView({ setActiveTab, openQuoteForPlan }: HomeViewPro
     <div className="bg-slate-50 min-h-screen font-sans" id="home-view-root">
       
       {/* 1. Hero Banner Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-950 text-white py-16 px-4 sm:px-8 lg:px-16" id="home-hero">
-        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:20px_20px]" />
+      <section className="relative overflow-hidden bg-[#005AAA] text-white py-16 px-4 sm:px-8 lg:px-16" id="home-hero">
+        <div className="absolute inset-0 bg-white/5" />
         
         <div className="mx-auto max-w-none grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
           
           {/* Left Text Block */}
           <div className="lg:col-span-7 space-y-6 text-left" id="hero-taglines">
-            <div className="inline-flex items-center space-x-2 bg-blue-500/20 text-blue-300 font-mono text-xs px-3 py-1.5 rounded-full border border-blue-400/30">
-              <ShieldCheck className="h-4 w-4 text-orange-400 animate-pulse" />
+            <div className="inline-flex items-center space-x-2 bg-white/10 text-white font-semibold text-xs px-4 py-2 rounded border border-white/20 uppercase tracking-wide">
+              <ShieldCheck className="h-4 w-4 text-orange-400" />
               <span>Authorized Retail Partner – Bajaj Life Insurance</span>
             </div>
             
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
               Protecting What <br />
               <span className="text-orange-400">Matters Most</span>
             </h1>
             
-            <p className="text-base sm:text-lg text-slate-300 max-w-xl leading-relaxed">
+            <p className="text-base sm:text-lg text-blue-50 max-w-xl leading-relaxed font-medium">
               Secure your family's future, children's education, and your retirement with India's most trusted insurance partnership model.
             </p>
 
@@ -50,7 +50,7 @@ export default function HomeView({ setActiveTab, openQuoteForPlan }: HomeViewPro
               <button
                 onClick={() => openQuoteForPlan('term-life')}
                 id="btn-hero-quote"
-                className="bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all flex items-center space-x-2 cursor-pointer"
+                className="bg-orange-500 hover:bg-orange-600 text-white font-bold px-8 py-3.5 rounded shadow-sm hover:shadow-md transition-all flex items-center space-x-2 cursor-pointer"
               >
                 <ShieldCheck className="h-5 w-5" />
                 <span>Get a Free Quote</span>
@@ -59,9 +59,9 @@ export default function HomeView({ setActiveTab, openQuoteForPlan }: HomeViewPro
                 href="https://wa.me/919876543210?text=Hi%20Sahiti,%20I'm%20interested%20in%20learning%20more%20about%20Bajaj%20Life%20Insurance%20plans."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-orange-500 hover:bg-orange-600 text-white font-bold px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all flex items-center space-x-2 cursor-pointer"
+                className="bg-white hover:bg-slate-50 text-[#005AAA] font-bold px-8 py-3.5 rounded shadow-sm hover:shadow-md transition-all flex items-center space-x-2 cursor-pointer border border-transparent"
               >
-                <svg className="h-5 w-5 fill-current" viewBox="0 0 24 24">
+                <svg className="h-5 w-5 fill-current text-emerald-500" viewBox="0 0 24 24">
                   <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.504-5.717-1.465L0 24zm6.26-4.148c1.657.983 3.327 1.498 5.694 1.499 5.539 0 10.05-4.48 10.054-9.988.002-2.67-1.026-5.18-2.894-7.052C17.29 2.44 14.78 1.41 12.016 1.41 6.502 1.41 1.992 5.89 1.988 11.399c-.001 2.222.548 4.39 1.587 6.189l-.993 3.626 3.735-.972zm12.39-7.25c-.269-.134-1.593-.787-1.839-.877-.247-.09-.427-.135-.607.135-.18.27-.697.877-.855 1.057-.157.18-.315.202-.584.067-.27-.134-1.14-.42-2.172-1.341-.803-.715-1.344-1.602-1.502-1.872-.158-.27-.017-.417.118-.552.122-.122.27-.315.405-.472.135-.157.18-.27.27-.45.09-.18.045-.337-.023-.472-.068-.135-.607-1.463-.832-2.003-.22-.528-.44-.456-.607-.464-.157-.008-.337-.009-.517-.009-.18 0-.472.067-.719.337-.247.27-.944.923-.944 2.25s.967 2.61 1.102 2.79c.135.18 1.902 2.904 4.609 4.074.644.278 1.147.445 1.538.569.647.206 1.236.177 1.701.107.518-.078 1.593-.652 1.819-1.282.225-.63.225-1.17.157-1.282-.068-.112-.247-.202-.516-.337z"/>
                 </svg>
                 <span>Talk on WhatsApp</span>
@@ -69,9 +69,9 @@ export default function HomeView({ setActiveTab, openQuoteForPlan }: HomeViewPro
             </div>
 
             {/* Badges below buttons */}
-            <div className="flex flex-wrap gap-6 pt-6 border-t border-white/10 text-xs text-slate-300">
+            <div className="flex flex-wrap gap-6 pt-6 border-t border-white/20 text-xs text-white/90 font-medium">
               <div className="flex items-center space-x-2">
-                <CheckCircle className="h-4 w-4 text-emerald-400" />
+                <CheckCircle className="h-4 w-4 text-orange-400" />
                 <span>23+ Lakh Claims Settled</span>
               </div>
               <div className="flex items-center space-x-2">
@@ -79,7 +79,7 @@ export default function HomeView({ setActiveTab, openQuoteForPlan }: HomeViewPro
                 <span>Trusted by Millions of Families</span>
               </div>
               <div className="flex items-center space-x-2">
-                <ShieldCheck className="h-4 w-4 text-blue-400" />
+                <ShieldCheck className="h-4 w-4 text-orange-400" />
                 <span>India's Most Trusted Insurer</span>
               </div>
             </div>
@@ -87,35 +87,34 @@ export default function HomeView({ setActiveTab, openQuoteForPlan }: HomeViewPro
 
           {/* Right Advisor Card Frame */}
           <div className="lg:col-span-5 relative" id="hero-image-wrapper">
-            <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-orange-400 to-blue-500 opacity-20 blur-lg" />
-            <div className="relative bg-white rounded-2xl p-6 shadow-2xl text-slate-900 border border-slate-100 flex flex-col items-center text-center">
+            <div className="relative bg-white rounded-xl p-8 shadow-xl text-slate-900 flex flex-col items-center text-center">
               
               {/* Profile Image with Verified Badge */}
-              <div className="relative h-28 w-28 mb-4">
+              <div className="relative h-32 w-32 mb-5">
                 <img
                   src="/sahiti_kotturty.png"
                   alt="Sahiti Kotturty Headshot"
-                  className="rounded-full h-full w-full object-cover border-4 border-slate-100 shadow-md"
+                  className="rounded-full h-full w-full object-cover shadow-sm"
                 />
-                <div className="absolute bottom-1 right-1 bg-blue-600 text-white rounded-full p-1 border-2 border-white shadow-xs">
+                <div className="absolute bottom-1 right-1 bg-orange-500 text-white rounded-full p-1.5 border-2 border-white shadow-sm">
                   <ShieldCheck className="h-4 w-4" />
                 </div>
               </div>
 
               {/* Profile Info */}
-              <h3 className="text-xl font-extrabold text-blue-900">Sahiti Kotturty</h3>
-              <p className="text-xs font-bold text-blue-600 mt-0.5">Authorized Retail Partner</p>
+              <h3 className="text-2xl font-bold text-[#005AAA]">Sahiti Kotturty</h3>
+              <p className="text-sm font-semibold text-slate-600 mt-1">Authorized Retail Partner</p>
               
-              <span className="mt-3 px-4 py-1.5 bg-blue-50 text-blue-800 text-xs font-bold rounded-full">
+              <span className="mt-4 px-4 py-1.5 bg-slate-100 text-slate-700 text-xs font-bold rounded">
                 RPD Emp code : VA 10044791
               </span>
 
-              <div className="mt-6 pt-4 border-t border-slate-100 w-full space-y-2">
-                <div className="flex items-center justify-center space-x-1.5 text-slate-700 text-xs font-semibold">
-                  <Star className="h-4 w-4 text-orange-400 fill-orange-400" />
+              <div className="mt-6 w-full space-y-2">
+                <div className="flex items-center justify-center space-x-1.5 text-slate-700 text-sm font-semibold">
+                  <Star className="h-4 w-4 text-orange-500 fill-orange-500" />
                   <span>Trusted. Certified. Committed.</span>
                 </div>
-                <p className="text-[11px] text-slate-500 leading-relaxed max-w-[220px] mx-auto">
+                <p className="text-xs text-slate-500 leading-relaxed max-w-[240px] mx-auto">
                   Helping you build a secure tomorrow, today.
                 </p>
               </div>
