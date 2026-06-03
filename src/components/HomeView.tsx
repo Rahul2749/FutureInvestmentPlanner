@@ -56,7 +56,7 @@ export default function HomeView({ setActiveTab, openQuoteForPlan }: HomeViewPro
                 <span>Get a Free Quote</span>
               </button>
               <a
-                href="https://wa.me/919876543210?text=Hi%20Sahiti,%20I'm%20interested%20in%20learning%20more%20about%20Bajaj%20Life%20Insurance%20plans."
+                href="https://wa.me/919423383890?text=Hi%20Sahiti,%20I'm%20interested%20in%20learning%20more%20about%20Bajaj%20Life%20Insurance%20plans."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white hover:bg-slate-50 text-[#005AAA] font-bold px-8 py-3.5 rounded shadow-sm hover:shadow-md transition-all flex items-center space-x-2 cursor-pointer border border-transparent"
@@ -222,7 +222,7 @@ export default function HomeView({ setActiveTab, openQuoteForPlan }: HomeViewPro
             <div className="space-y-3">
               {/* WhatsApp CTA */}
               <a
-                href="https://wa.me/919876543210?text=Hi%20Sahiti,%20I'd%20like%20to%20plan%20my%20future%20investments."
+                href="https://wa.me/919423383890?text=Hi%20Sahiti,%20I'd%20like%20to%20plan%20my%20future%20investments."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-between p-4 bg-white hover:bg-slate-50 border border-slate-100 rounded-xl shadow-2xs hover:shadow-xs transition-all"
@@ -243,7 +243,7 @@ export default function HomeView({ setActiveTab, openQuoteForPlan }: HomeViewPro
 
               {/* Call CTA */}
               <a
-                href="tel:+919876543210"
+                href="tel:+919423383890"
                 className="flex items-center justify-between p-4 bg-white hover:bg-slate-50 border border-slate-100 rounded-xl shadow-2xs hover:shadow-xs transition-all"
               >
                 <div className="flex items-center space-x-3.5">
@@ -260,7 +260,7 @@ export default function HomeView({ setActiveTab, openQuoteForPlan }: HomeViewPro
 
               {/* Email CTA */}
               <a
-                href="mailto:sahitikotturty@gmail.com"
+                href="mailto:skotturty@gmail.com"
                 className="flex items-center justify-between p-4 bg-white hover:bg-slate-50 border border-slate-100 rounded-xl shadow-2xs hover:shadow-xs transition-all"
               >
                 <div className="flex items-center space-x-3.5">
@@ -269,7 +269,7 @@ export default function HomeView({ setActiveTab, openQuoteForPlan }: HomeViewPro
                   </div>
                   <div>
                     <h4 className="text-xs font-bold text-slate-800">Email Me</h4>
-                    <p className="text-[10px] text-slate-500 mt-0.5">sahitikotturty@gmail.com</p>
+                    <p className="text-[10px] text-slate-500 mt-0.5">skotturty@gmail.com</p>
                   </div>
                 </div>
                 <ArrowRight className="h-4 w-4 text-slate-400" />

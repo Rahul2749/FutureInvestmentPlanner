@@ -65,7 +65,7 @@ export default function Header({
 
           {/* WhatsApp Quick CTA Icon */}
           <a
-            href="https://wa.me/919876543210?text=Hi%20Sahiti,%20I'm%20interested%20in%20learning%20more%20about%20Bajaj%20Life%20Insurance%20plans."
+            href="https://wa.me/919423383890?text=Hi%20Sahiti,%20I'm%20interested%20in%20learning%20more%20about%20Bajaj%20Life%20Insurance%20plans."
             target="_blank"
             rel="noopener noreferrer"
             className="flex h-9 w-9 items-center justify-center rounded-full bg-emerald-500 text-white hover:bg-emerald-600 shadow-xs hover:scale-105 transition-all"
