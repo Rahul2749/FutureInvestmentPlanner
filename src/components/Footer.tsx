@@ -10,7 +10,7 @@ export default function Footer({ setActiveTab }: FooterProps) {
 
   return (
     <footer className="bg-slate-900 text-slate-300 border-t border-slate-800" id="main-footer">
-      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-none px-4 sm:px-8 lg:px-16 py-12">
         
         {/* Main Content Grid */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8" id="footer-grid">
@@ -107,7 +107,7 @@ export default function Footer({ setActiveTab }: FooterProps) {
               </a>
               <span className="w-px bg-slate-800 h-6"></span>
               <a href="https://facebook.com" className="p-1.5 bg-slate-800 hover:bg-blue-800 rounded-full text-slate-300 hover:text-white transition-all">
-                <svg className="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z"/></svg>
+                <svg className="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3-3c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z"/></svg>
               </a>
               <a href="https://instagram.com" className="p-1.5 bg-slate-800 hover:bg-pink-600 rounded-full text-slate-300 hover:text-white transition-all">
                 <svg className="h-4 w-4 fill-none stroke-current stroke-2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
@@ -120,7 +120,7 @@ export default function Footer({ setActiveTab }: FooterProps) {
             {/* Profile Info Card */}
             <div className="bg-slate-950 p-4 rounded-xl border border-slate-800">
               <span className="text-white font-extrabold text-sm block">Sahiti Kotturty</span>
-              <span className="text-[10px] font-mono text-orange-400 block mt-0.5">RP Code: BAL123456</span>
+              <span className="text-[10px] font-mono text-orange-400 block mt-0.5">RPD Emp code : VA 10044791</span>
               <span className="text-[10px] text-slate-500 block mt-2">
                 Authorized Retail Partner - Bajaj Life Insurance
               </span>

@@ -1,17 +1,16 @@
 import React from 'react';
 import { 
   ShieldCheck, 
-  ArrowRight, 
   CheckCircle, 
   Users, 
-  Sparkles,
   Phone,
   Mail,
   Lock,
   Clock,
   Heart,
   Star,
-  Award
+  Award,
+  ArrowRight
 } from 'lucide-react';
 import { ConsultationInquiry } from '../types';
 
@@ -26,10 +25,10 @@ export default function HomeView({ setActiveTab, openQuoteForPlan }: HomeViewPro
     <div className="bg-slate-50 min-h-screen font-sans" id="home-view-root">
       
       {/* 1. Hero Banner Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-950 text-white py-16 px-4 sm:px-6 lg:px-8" id="home-hero">
+      <section className="relative overflow-hidden bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-950 text-white py-16 px-4 sm:px-8 lg:px-16" id="home-hero">
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:20px_20px]" />
         
-        <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+        <div className="mx-auto max-w-none grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
           
           {/* Left Text Block */}
           <div className="lg:col-span-7 space-y-6 text-left" id="hero-taglines">
@@ -108,7 +107,7 @@ export default function HomeView({ setActiveTab, openQuoteForPlan }: HomeViewPro
               <p className="text-xs font-bold text-blue-600 mt-0.5">Authorized Retail Partner</p>
               
               <span className="mt-3 px-4 py-1.5 bg-blue-50 text-blue-800 text-xs font-bold rounded-full">
-                RP Code: BAL123456
+                RPD Emp code : VA 10044791
               </span>
 
               <div className="mt-6 pt-4 border-t border-slate-100 w-full space-y-2">
@@ -129,7 +128,7 @@ export default function HomeView({ setActiveTab, openQuoteForPlan }: HomeViewPro
 
       {/* 2. Official Authorization Notice Bar */}
       <section className="bg-white border-b border-slate-100 py-4 px-4 text-center">
-        <div className="mx-auto max-w-7xl flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-2 text-xs font-semibold text-slate-700">
+        <div className="mx-auto max-w-none px-4 sm:px-8 lg:px-16 flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-2 text-xs font-semibold text-slate-700">
           <ShieldCheck className="h-4 w-4 text-blue-600 shrink-0" />
           <span>Officially Authorized to Sell Bajaj Life Insurance Products.</span>
           <span className="text-slate-400 hidden sm:inline">|</span>
@@ -138,7 +137,7 @@ export default function HomeView({ setActiveTab, openQuoteForPlan }: HomeViewPro
       </section>
 
       {/* 3. Why Families Choose Me Section */}
-      <section className="py-16 px-4 max-w-7xl mx-auto" id="why-choose-me">
+      <section className="py-16 px-4 max-w-none sm:px-8 lg:px-16 mx-auto" id="why-choose-me">
         <div className="text-center max-w-xl mx-auto mb-12">
           <h2 className="text-3xl font-extrabold text-slate-900">Why Families Choose Me</h2>
           <div className="w-12 h-1 bg-orange-500 mx-auto mt-3 rounded-full" />
@@ -186,8 +185,8 @@ export default function HomeView({ setActiveTab, openQuoteForPlan }: HomeViewPro
       </section>
 
       {/* 4. Let's Plan Your Secure Future Section */}
-      <section className="bg-slate-50 py-16 px-4 border-t border-slate-100" id="plan-secure-future">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <section className="bg-slate-50 py-16 px-4 sm:px-8 lg:px-16 border-t border-slate-100" id="plan-secure-future">
+        <div className="max-w-none mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           {/* Left Column: Family Image with Overlay */}
           <div className="lg:col-span-7 relative">
@@ -283,8 +282,8 @@ export default function HomeView({ setActiveTab, openQuoteForPlan }: HomeViewPro
       </section>
 
       {/* 5. Highlight Badges Footer Bar */}
-      <section className="bg-blue-900 py-10 px-4 text-white">
-        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
+      <section className="bg-blue-900 py-10 px-4 sm:px-8 lg:px-16 text-white">
+        <div className="max-w-none mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
           <div className="flex flex-col items-center text-center space-y-2">
             <ShieldCheck className="h-7 w-7 text-orange-400" />
             <h4 className="text-xs font-bold uppercase tracking-wider">Wide Range of Plans</h4>
