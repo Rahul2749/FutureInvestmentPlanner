@@ -34,25 +34,7 @@ export default function Header({
           onClick={() => setActiveTab('home')}
           id="header-brand-container"
         >
-          <div className="flex items-center space-x-2">
-            {/* Blue Box with Bajaj Logo mark and text */}
-            <div className="flex flex-col items-center justify-center bg-[#005AAA] text-white w-10 h-10 shrink-0 shadow-sm">
-              <svg width="20" height="12" viewBox="0 0 24 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 0C12 0 16 4 20 4C24 4 24 10 20 10C16 10 12 6 12 6C12 6 8 10 4 10C0 10 0 4 4 4C8 4 12 0 12 0Z" fill="currentColor"/>
-              </svg>
-              <span className="text-[7px] font-bold tracking-wider mt-0.5">BAJAJ</span>
-            </div>
-            {/* LIFE INSURANCE text */}
-            <div className="flex flex-col">
-              <div className="text-[#005AAA] text-[22px] font-bold tracking-tight leading-none">
-                LIFE
-              </div>
-              {/* Subtitle */}
-              <div className="text-[#005AAA] text-[8px] font-bold tracking-widest mt-1">
-                LIFE GOALS. DONE.
-              </div>
-            </div>
-          </div>
+          <img src="/bajaj_logo.png" alt="Bajaj Life Logo" className="h-12 object-contain" />
         </div>
 
         {/* Right Side Info & Action Buttons */}
