@@ -287,7 +287,7 @@ export default function QuoteModal({ isOpen, onClose, preSelectedPlanId, onSubmi
                   </div>
 
                   <div className="bg-orange-50 border border-orange-100 rounded-md p-2.5 text-[10px] text-orange-950 leading-relaxed">
-                    By submitting, you authorize Bajaj Allianz Advisors to generate digital illustrations and conduct OTP KYC verifications.
+                    By submitting, you authorize Bajaj Life Advisors to generate digital illustrations and conduct OTP KYC verifications.
                   </div>
 
                   <button

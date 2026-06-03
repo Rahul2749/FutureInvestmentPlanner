@@ -8,7 +8,7 @@ export const EXPERTS: Expert[] = [
     region: 'East India',
     experience: '12+ Years',
     image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCRjnWvD7qlkF9iMa9UYP3Ox8oCeYeXo2M1OZeQ7ktask_qyYrdXu3MdNS-QHY_SGJwdld7xld6fzVXig_TIc0MXGv75OLuSVEKZhps4xoXvNrBmsG4w9x6D4XUlxVQGQKFFv_FLdMMRCQa68AL4R2t_q-KZwPE1Cswp5lEsmeqcSTgTgOcf-066U0lNAcK-rAtsfzzYFLuzbePISH0_BGz_RDnsZcltu2IrBPIKpSU5XV8Mbu-NRsrtqV52s0uULuq4x_o2aNufW0',
-    email: 'arjun.sharma@bajajallianz.com',
+    email: 'arjun.sharma@bajajlife.com',
     phone: '+91 98300 24101',
     specialty: 'Strategic Retail Development & Micro-insurance expansion'
   },
@@ -19,7 +19,7 @@ export const EXPERTS: Expert[] = [
     region: 'West India',
     experience: '9+ Years',
     image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCrzEt5JV0lZDwOP38zZTBifEJt2mitzySFqwdDPvy5-bQKnFML_m89p0NR0SvtzccSVGRIfn8x9OZjFA9KGClCBCgZwOFb6jYmG1ZhjflypW8Pt4XVMWMq73vXGmaxZ5lcBNjasRpJnZIT8lq9qQLIJHQK_O9naAa77F6pYxjK9ruSCjBu39dFLM6tGjoukAHnyLag0Z4KcY05BK3k20pIwG6F5uFqF4j2XwMHzo04onK05jUoM0N2C2CxEY5jOeeRB09AEak7S_0',
-    email: 'priya.patel@bajajallianz.com',
+    email: 'priya.patel@bajajlife.com',
     phone: '+91 98220 55432',
     specialty: 'Agency Channel scaling and Digital Onboarding'
   },
@@ -30,7 +30,7 @@ export const EXPERTS: Expert[] = [
     region: 'North India',
     experience: '10+ Years',
     image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAB85Pgry-Spr-XDeQuQa_T3Z9EYHTXhSutFTQpBsMBD3NYmf4wB6zUUx35cyiD6fLkqb0xbWTIMb_REBC4lgu4CVFUtH_DWfJptfSTKFzxQe2NUOviycybB6mizBycOQLCnitbujY0xZU5PVQqphQ0qMf3soAwdrvA6lOqHJ2Ah2ReF39eFJbsPsbid9REhJKPOGzizFaSjWRVU_YMVR2kAA0x2qCOwL6hZqkGOSJL0iOqyMZcyGeY3fih36-ChFFodbQyN9kQgUo',
-    email: 'rohan.mehta@bajajallianz.com',
+    email: 'rohan.mehta@bajajlife.com',
     phone: '+91 98110 33499',
     specialty: 'HNI Wealth Structuring & Retirement Planning Portfolios'
   }
@@ -42,8 +42,8 @@ export const SUCCESS_STORIES: SuccessStory[] = [
     name: 'Anjali Mehta',
     role: 'Senior Life Goals Advisor',
     incomeGrowth: '3x Income Growth',
-    story: 'Being a Bajaj Allianz Partner gave me absolute financial independence. The flexible working hours allow me to balance work and family life beautifully without compromises.',
-    fullQuote: 'I started 3 years ago looking for part-time income. Today, I am leading an advisory group of 5 sub-agents. The comprehensive training academy made my lack of background in finance completely irrelevant. Bajaj Allianz provided me with the tools, technology, and branding to establish complete credibility in my city.',
+    story: 'Being a Bajaj Life Partner gave me absolute financial independence. The flexible working hours allow me to balance work and family life beautifully without compromises.',
+    fullQuote: 'I started 3 years ago looking for part-time income. Today, I am leading an advisory group of 5 sub-agents. The comprehensive training academy made my lack of background in finance completely irrelevant. Bajaj Life provided me with the tools, technology, and branding to establish complete credibility in my city.',
     image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBbP9iEboh_lWknjQkpajKtyKYveKp2lkJhYHZ2ftdyQPJ9ZVBjrUr1fvJJGi2GHllUe_EkqpoVM9NzEa9uiA67OXYQyWUY81qGJx9-69oXYB4eysnmyLkjvMaGISWUfPhT_Q7oGNuBd2LGQtUDaLACykBTUqinrih7A3VQiXYbsAERaz_yP1RGXKxxZAxmO-GZnFhvT6ld4csXWx-oN1YiqQePA00LqRk5OabkGPq6xntYXpClff8M15gucghOUjX5d0aL5odnHdo',
     rating: 5
   },
@@ -63,7 +63,7 @@ export const SUCCESS_STORIES: SuccessStory[] = [
     role: 'Corporate Insurance Associate',
     incomeGrowth: 'MDRT Qualifier in Year 1',
     story: 'The real-time commission tracking is highly motivating and highly transparent. Customer service and query resolution teams are incredibly prompt.',
-    fullQuote: 'The brand credibility of Bajaj Allianz is so strong that doors open easily. From SMEs needing group gratuity plans to families securing term protection, the product diversity lets me serve any client base. Tracking payout cycles directly on the App dashboard build immense trust.',
+    fullQuote: 'The brand credibility of Bajaj Life is so strong that doors open easily. From SMEs needing group gratuity plans to families securing term protection, the product diversity lets me serve any client base. Tracking payout cycles directly on the App dashboard build immense trust.',
     image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDAWgufehzeFC-YeJuaSXZlhRkpCAVCs-l4Qv1NlDPBJxfIs9grytVoAiuT0M2azPbt9pZ69DPEt1qSkuy63CgpFCbWXWlC63tm-GN3vr5CkTedrcc0Gt77zLdDVDAYdC1_1JFfU_f6jPQgZ4rPoc-VukTcIiiAiNlWaZAhqIV8xxlLoYoo0pJJktnoOoTsNiTpCrOQvqk6xqJ3agNYPkujcYVDxIjBAQTarjonBXphhjaO2a2-49vJ7C6vQJhHD_vHlyvnr1H8QOc',
     rating: 4.8
   }
@@ -224,7 +224,7 @@ export const PARTNERSHIP_BENEFITS = [
   },
   {
     title: 'Bajaj Brand Credibility',
-    description: 'Leverage the immense financial trust of Bajaj Allianz Life with over 20+ years of award-winning protection lineage and prompt claims.'
+    description: 'Leverage the immense financial trust of Bajaj Life Insurance with over 20+ years of award-winning protection lineage and prompt claims.'
   },
   {
     title: 'Comprehensive Academy',

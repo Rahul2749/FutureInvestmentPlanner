@@ -125,7 +125,7 @@ export default function AboutContactView({ onSendMessage }: AboutContactViewProp
               <span className="text-blue-400">Financial Security</span>
             </h1>
             <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-xl">
-              Backed by the solid financial trust legacy of Bajaj Allianz Life Insurance. We are committed to translating complex protection schemes into everyday reliable household tools, assisting millions of Indian families to retire worry-free.
+              Backed by the solid financial trust legacy of Bajaj Life Insurance. We are committed to translating complex protection schemes into everyday reliable household tools, assisting millions of Indian families to retire worry-free.
             </p>
             <div className="bg-slate-950 bg-opacity-70 p-4 rounded-xl border border-slate-800 flex gap-4 max-w-xl">
               <div className="h-10 w-10 shrink-0 bg-orange-500 rounded-lg flex items-center justify-center text-white font-bold font-mono">20+</div>
@@ -140,7 +140,7 @@ export default function AboutContactView({ onSendMessage }: AboutContactViewProp
             <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-orange-400 to-blue-500 opacity-20 blur-lg" />
             <img
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8fpWvVHE6u5BKblugqFQn2g-E9j47RSyYYAiiW73sPWt3yUn-GacCWm-fhZkmvLSamGIWGCFXVZVm2-9Tgq4LtKuvaEvisP6IZgwSEt2oPUtkMMTbIYgJFn6U6aN9HeEHLshr9vOpDUuTqi-ZEmGlW6NknR5Pst4EwwDgvg51-2pH8wuy9d3se5LDV_pDClB50xxeYBACmxIVh_okEDYOI-h5WqssCH4sr23PSHLD0THFHhdvNcWXHDyyuNygXdbh6eFx3tflY2k"
-              alt="Bajaj Allianz state-of-the-art advisor office building represent global operations presence"
+              alt="Bajaj Life state-of-the-art advisor office building represent global operations presence"
               referrerPolicy="no-referrer"
               className="rounded-2xl border border-slate-700 shadow-2xl object-cover w-full h-[220px]"
             />
@@ -407,7 +407,7 @@ export default function AboutContactView({ onSendMessage }: AboutContactViewProp
               </div>
               <h4 className="text-base font-black text-slate-900 leading-tight">Headquarters Coordinates</h4>
               <p className="text-xs text-slate-500 mt-1 leading-relaxed">
-                Bajaj Allianz Life Insurance Co. Ltd.<br />
+                Bajaj Life Insurance Co. Ltd.<br />
                 GE Plaza, Airport Road, Yerawada,<br />
                 Pune - 411006, Maharashtra.
               </p>
@@ -418,7 +418,7 @@ export default function AboutContactView({ onSendMessage }: AboutContactViewProp
                 </div>
                 <div className="flex items-center space-x-2">
                   <Mail className="h-3.5 w-3.5 text-blue-600" />
-                  <span>customercare@bajajallianz.co.in</span>
+                  <span>customercare@bajajlife.com</span>
                 </div>
               </div>
             </div>

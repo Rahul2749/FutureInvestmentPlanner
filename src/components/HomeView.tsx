@@ -1,18 +1,18 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import React from 'react';
 import { 
   ShieldCheck, 
   ArrowRight, 
-  Coins, 
-  Clock, 
-  Compass, 
   CheckCircle, 
-  Heart, 
-  GraduationCap, 
-  HelpCircle, 
-  Sparkles 
+  Users, 
+  Sparkles,
+  Phone,
+  Mail,
+  Lock,
+  Clock,
+  Heart,
+  Star,
+  Award
 } from 'lucide-react';
-import { INSURANCE_PLANS } from '../data';
 import { ConsultationInquiry } from '../types';
 
 interface HomeViewProps {
@@ -21,60 +21,9 @@ interface HomeViewProps {
   onSubmitConsultation: (inquiry: Omit<ConsultationInquiry, 'id' | 'date' | 'status'>) => void;
 }
 
-export default function HomeView({ setActiveTab, openQuoteForPlan, onSubmitConsultation }: HomeViewProps) {
-  // Free Consultation Form State
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    pincode: '',
-    insuranceInterest: 'term-life',
-    preferredTime: 'morning'
-  });
-  const [formSuccess, setFormSuccess] = useState(false);
-
-  // Interactive Advisory Core Widget State
-  const [quizAge, setQuizAge] = useState<number>(30);
-  const [quizGoal, setQuizGoal] = useState<'protection' | 'savings' | 'retirement' | 'child'>('protection');
-  const [recommendedPlanId, setRecommendedPlanId] = useState<string>('term-life');
-
-  // Trigger advisory updates
-  const handleQuizGoalChange = (goal: 'protection' | 'savings' | 'retirement' | 'child') => {
-    setQuizGoal(goal);
-    if (goal === 'protection') {
-      setRecommendedPlanId('term-life');
-    } else if (goal === 'savings') {
-      setRecommendedPlanId('investment');
-    } else if (goal === 'retirement') {
-      setRecommendedPlanId('retirement');
-    } else {
-      setRecommendedPlanId('child');
-    }
-  };
-
-  const handleFormSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!formData.name || !formData.email || !formData.phone || !formData.pincode) {
-      alert('Please fill out all mandatory fields.');
-      return;
-    }
-    onSubmitConsultation(formData);
-    setFormSuccess(true);
-    setTimeout(() => {
-      setFormSuccess(false);
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        pincode: '',
-        insuranceInterest: 'term-life',
-        preferredTime: 'morning'
-      });
-    }, 5000);
-  };
-
+export default function HomeView({ setActiveTab, openQuoteForPlan }: HomeViewProps) {
   return (
-    <div className="bg-slate-50 min-h-screen" id="home-view-root">
+    <div className="bg-slate-50 min-h-screen font-sans" id="home-view-root">
       
       {/* 1. Hero Banner Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-950 text-white py-16 px-4 sm:px-6 lg:px-8" id="home-hero">
@@ -84,9 +33,9 @@ export default function HomeView({ setActiveTab, openQuoteForPlan, onSubmitConsu
           
           {/* Left Text Block */}
           <div className="lg:col-span-7 space-y-6 text-left" id="hero-taglines">
-            <div className="inline-flex items-center space-x-2 bg-blue-500/20 text-blue-300 font-mono text-xs px-3 py-1 rounded-full border border-blue-400/30">
-              <span className="h-2 w-2 rounded-full bg-orange-400 animate-ping"></span>
-              <span>Exclusive Strategic Retail Partner Network</span>
+            <div className="inline-flex items-center space-x-2 bg-blue-500/20 text-blue-300 font-mono text-xs px-3 py-1.5 rounded-full border border-blue-400/30">
+              <ShieldCheck className="h-4 w-4 text-orange-400 animate-pulse" />
+              <span>Authorized Retail Partner – Bajaj Life Insurance</span>
             </div>
             
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight">
@@ -95,397 +44,267 @@ export default function HomeView({ setActiveTab, openQuoteForPlan, onSubmitConsu
             </h1>
             
             <p className="text-base sm:text-lg text-slate-300 max-w-xl leading-relaxed">
-              Secure your family's future, children's high educational milestones, and premium retirement wealth with India's most trusted insurance partnership model.
+              Secure your family's future, children's education, and your retirement with India's most trusted insurance partnership model.
             </p>
 
             <div className="flex flex-wrap gap-4 pt-4">
               <button
-                onClick={() => setActiveTab('partner')}
-                id="btn-hero-partnership"
+                onClick={() => openQuoteForPlan('term-life')}
+                id="btn-hero-quote"
+                className="bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all flex items-center space-x-2 cursor-pointer"
+              >
+                <ShieldCheck className="h-5 w-5" />
+                <span>Get a Free Quote</span>
+              </button>
+              <a
+                href="https://wa.me/919876543210?text=Hi%20Sahiti,%20I'm%20interested%20in%20learning%20more%20about%20Bajaj%20Life%20Insurance%20plans."
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-orange-500 hover:bg-orange-600 text-white font-bold px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all flex items-center space-x-2 cursor-pointer"
               >
-                <span>Become a Strategic Partner</span>
-                <ArrowRight className="h-5 w-5" />
-              </button>
-              <button
-                onClick={() => setActiveTab('products')}
-                id="btn-hero-plans"
-                className="bg-transparent hover:bg-white/10 text-white font-bold px-6 py-3 rounded-lg border border-white/30 transition-all cursor-pointer"
-              >
-                <span>Explore Insurance Plans</span>
-              </button>
+                <svg className="h-5 w-5 fill-current" viewBox="0 0 24 24">
+                  <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.504-5.717-1.465L0 24zm6.26-4.148c1.657.983 3.327 1.498 5.694 1.499 5.539 0 10.05-4.48 10.054-9.988.002-2.67-1.026-5.18-2.894-7.052C17.29 2.44 14.78 1.41 12.016 1.41 6.502 1.41 1.992 5.89 1.988 11.399c-.001 2.222.548 4.39 1.587 6.189l-.993 3.626 3.735-.972zm12.39-7.25c-.269-.134-1.593-.787-1.839-.877-.247-.09-.427-.135-.607.135-.18.27-.697.877-.855 1.057-.157.18-.315.202-.584.067-.27-.134-1.14-.42-2.172-1.341-.803-.715-1.344-1.602-1.502-1.872-.158-.27-.017-.417.118-.552.122-.122.27-.315.405-.472.135-.157.18-.27.27-.45.09-.18.045-.337-.023-.472-.068-.135-.607-1.463-.832-2.003-.22-.528-.44-.456-.607-.464-.157-.008-.337-.009-.517-.009-.18 0-.472.067-.719.337-.247.27-.944.923-.944 2.25s.967 2.61 1.102 2.79c.135.18 1.902 2.904 4.609 4.074.644.278 1.147.445 1.538.569.647.206 1.236.177 1.701.107.518-.078 1.593-.652 1.819-1.282.225-.63.225-1.17.157-1.282-.068-.112-.247-.202-.516-.337z"/>
+                </svg>
+                <span>Talk on WhatsApp</span>
+              </a>
+            </div>
+
+            {/* Badges below buttons */}
+            <div className="flex flex-wrap gap-6 pt-6 border-t border-white/10 text-xs text-slate-300">
+              <div className="flex items-center space-x-2">
+                <CheckCircle className="h-4 w-4 text-emerald-400" />
+                <span>23+ Lakh Claims Settled</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Users className="h-4 w-4 text-orange-400" />
+                <span>Trusted by Millions of Families</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <ShieldCheck className="h-4 w-4 text-blue-400" />
+                <span>India's Most Trusted Insurer</span>
+              </div>
             </div>
           </div>
 
-          {/* Right Image Frame with Absolute Overlays */}
+          {/* Right Advisor Card Frame */}
           <div className="lg:col-span-5 relative" id="hero-image-wrapper">
-            <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-orange-400 to-blue-500 opacity-30 blur-lg" />
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10 bg-slate-800">
+            <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-orange-400 to-blue-500 opacity-20 blur-lg" />
+            <div className="relative bg-white rounded-2xl p-6 shadow-2xl text-slate-900 border border-slate-100 flex flex-col items-center text-center">
+              
+              {/* Profile Image with Verified Badge */}
+              <div className="relative h-28 w-28 mb-4">
+                <img
+                  src="/sahiti_kotturty.png"
+                  alt="Sahiti Kotturty Headshot"
+                  className="rounded-full h-full w-full object-cover border-4 border-slate-100 shadow-md"
+                />
+                <div className="absolute bottom-1 right-1 bg-blue-600 text-white rounded-full p-1 border-2 border-white shadow-xs">
+                  <ShieldCheck className="h-4 w-4" />
+                </div>
+              </div>
+
+              {/* Profile Info */}
+              <h3 className="text-xl font-extrabold text-blue-900">Sahiti Kotturty</h3>
+              <p className="text-xs font-bold text-blue-600 mt-0.5">Authorized Retail Partner</p>
+              
+              <span className="mt-3 px-4 py-1.5 bg-blue-50 text-blue-800 text-xs font-bold rounded-full">
+                RP Code: BAL123456
+              </span>
+
+              <div className="mt-6 pt-4 border-t border-slate-100 w-full space-y-2">
+                <div className="flex items-center justify-center space-x-1.5 text-slate-700 text-xs font-semibold">
+                  <Star className="h-4 w-4 text-orange-400 fill-orange-400" />
+                  <span>Trusted. Certified. Committed.</span>
+                </div>
+                <p className="text-[11px] text-slate-500 leading-relaxed max-w-[220px] mx-auto">
+                  Helping you build a secure tomorrow, today.
+                </p>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* 2. Official Authorization Notice Bar */}
+      <section className="bg-white border-b border-slate-100 py-4 px-4 text-center">
+        <div className="mx-auto max-w-7xl flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-2 text-xs font-semibold text-slate-700">
+          <ShieldCheck className="h-4 w-4 text-blue-600 shrink-0" />
+          <span>Officially Authorized to Sell Bajaj Life Insurance Products.</span>
+          <span className="text-slate-400 hidden sm:inline">|</span>
+          <span className="text-slate-500 font-normal">This website is operated by an Authorized Retail Partner of Bajaj Life Insurance Co. Ltd.</span>
+        </div>
+      </section>
+
+      {/* 3. Why Families Choose Me Section */}
+      <section className="py-16 px-4 max-w-7xl mx-auto" id="why-choose-me">
+        <div className="text-center max-w-xl mx-auto mb-12">
+          <h2 className="text-3xl font-extrabold text-slate-900">Why Families Choose Me</h2>
+          <div className="w-12 h-1 bg-orange-500 mx-auto mt-3 rounded-full" />
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {[
+            {
+              title: 'Personalized Guidance',
+              description: 'Plans designed as per your life goals and financial needs.',
+              icon: Users,
+              color: 'bg-blue-50 text-blue-600'
+            },
+            {
+              title: 'Trusted Solutions',
+              description: 'Access to a wide range of Bajaj Life Insurance plans.',
+              icon: Award,
+              color: 'bg-orange-50 text-orange-600'
+            },
+            {
+              title: 'Fast Claim Assistance',
+              description: 'End-to-end support for a hassle-free claim experience.',
+              icon: ShieldCheck,
+              color: 'bg-emerald-50 text-emerald-600'
+            },
+            {
+              title: 'Long-term Relationship',
+              description: "I'm with you at every stage of your life journey.",
+              icon: Heart,
+              color: 'bg-purple-50 text-purple-600'
+            }
+          ].map((card, idx) => {
+            const Icon = card.icon;
+            return (
+              <div key={idx} className="bg-white p-6 rounded-2xl border border-slate-100 shadow-xs hover:shadow-md transition-all flex flex-col items-center text-center">
+                <div className={`p-4 rounded-full ${card.color} mb-4`}>
+                  <Icon className="h-6 w-6" />
+                </div>
+                <h4 className="text-sm font-bold text-slate-900 mb-2">{card.title}</h4>
+                <p className="text-xs text-slate-500 leading-relaxed">{card.description}</p>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* 4. Let's Plan Your Secure Future Section */}
+      <section className="bg-slate-50 py-16 px-4 border-t border-slate-100" id="plan-secure-future">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          {/* Left Column: Family Image with Overlay */}
+          <div className="lg:col-span-7 relative">
+            <div className="relative rounded-2xl overflow-hidden shadow-xl border border-slate-200 bg-slate-200">
               <img
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbwbwgHJCNWHCUeQSynTZafDP_-xii4VDEfSx-c-_CeS3gFscL_7TALdh8E0P-7W7mQGxqPGCHJ-X8Jbfl19oLQxwj8q-tbTlgDVoG0SNx7lgJodvUoKJKndo8Hf-Lr7PpNPx860rt3o6cAohlQZ7u80szrz3okPxgCaaNb8PdZ3CNJ6dIAasuQbyNRoowKBH3TuMUfwBPcxNfvSJ4oVn536H2qP4622bKve7mCHbPkQSqpENznGtX1bmkiRVc5jMkwor9sa2GKxw"
-                alt="Happy family laughing on a couch representing protection"
-                referrerPolicy="no-referrer"
-                className="w-full h-auto object-cover max-h-[380px] lg:scale-105 hover:scale-100 transition-transform duration-500"
+                src="/family_future.png"
+                alt="Happy Indian Family"
+                className="w-full h-auto object-cover max-h-[420px]"
               />
               
-              {/* Trust Badge overlay */}
-              <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-xs p-3 rounded-xl shadow-lg border border-blue-100/50 text-slate-900 max-w-[200px]">
-                <div className="flex items-center space-x-1.5 text-blue-600 mb-1">
-                  <ShieldCheck className="h-5 w-5" />
-                  <span className="font-extrabold text-xs">Trusted Protection</span>
+              {/* Overlay Card */}
+              <div className="absolute bottom-6 left-6 right-6 bg-blue-900/95 backdrop-blur-md p-5 rounded-xl border border-white/10 text-white flex items-start space-x-3.5 max-w-sm">
+                <div className="p-2.5 rounded-lg bg-blue-600 text-white shrink-0 shadow-md">
+                  <ShieldCheck className="h-6 w-6" />
                 </div>
-                <p className="text-[10px] text-slate-600">Over 23 Lakh active claims settled across India during FY23-24.</p>
+                <div>
+                  <h4 className="font-extrabold text-sm">Future Secure Life</h4>
+                  <p className="text-[10px] text-slate-300 font-medium uppercase tracking-wider mt-0.5">Protecting Your Family's Future</p>
+                  <p className="text-xs text-slate-200 mt-2 leading-relaxed">
+                    Over 23 Lakh active claims settled across India during FY23-24.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
 
-        </div>
-      </section>
-
-      {/* 2. Interactive "Goal Advisor" Quiz Section - A wonderful interactive addition! */}
-      <section className="bg-white py-12 px-4 shadow-xs" id="quick-advisor-tool">
-        <div className="mx-auto max-w-4xl border border-slate-100 bg-linear-to-b from-blue-50/50 to-white rounded-2xl p-6 sm:p-8">
-          <div className="text-center max-w-xl mx-auto mb-8">
-            <span className="text-blue-700 font-extrabold uppercase text-xs tracking-wider">Plan Advisor Tool</span>
-            <h2 className="text-2xl font-extrabold text-slate-800 mt-1">Find the Ideal Plan in 30 Seconds</h2>
-            <p className="text-xs text-slate-500 mt-1">Select your primary financial milestone and age to instantly view a matching Bajaj Allianz solution.</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-            
-            {/* Interactive Inputs */}
-            <div className="space-y-6">
-              <div>
-                <label className="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-2">
-                  1. What is your top financial focus?
-                </label>
-                <div className="grid grid-cols-2 gap-2" id="advisor-goal-selector">
-                  {[
-                    { id: 'protection', label: 'Pure Life Protection', icon: Heart },
-                    { id: 'savings', label: 'Wealth Creation', icon: Coins },
-                    { id: 'retirement', label: 'Regular Pension', icon: Compass },
-                    { id: 'child', label: 'Child Education', icon: GraduationCap },
-                  ].map((goalItem) => {
-                    const GoalIcon = goalItem.icon;
-                    return (
-                      <button
-                        key={goalItem.id}
-                        type="button"
-                        onClick={() => handleQuizGoalChange(goalItem.id as any)}
-                        className={`flex flex-col items-center justify-center p-3 rounded-lg border text-center transition-all cursor-pointer ${
-                          quizGoal === goalItem.id
-                            ? 'border-blue-600 bg-blue-50/50 text-blue-900 font-extrabold ring-2 ring-blue-100'
-                            : 'border-slate-200 bg-white text-slate-600 hover:border-slate-300'
-                        }`}
-                      >
-                        <GoalIcon className="h-5 w-5 mb-1.5 text-blue-600 shrink-0" />
-                        <span className="text-xs">{goalItem.label}</span>
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
-
-              <div>
-                <div className="flex justify-between items-center mb-1.5">
-                  <span className="text-xs font-bold text-slate-600 uppercase tracking-widest">2. Your Current Age</span>
-                  <span className="text-sm font-black text-blue-700">{quizAge} Years</span>
-                </div>
-                <input
-                  type="range"
-                  min="18"
-                  max="65"
-                  value={quizAge}
-                  onChange={(e) => setQuizAge(parseInt(e.target.value))}
-                  className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
-                />
-                <div className="flex justify-between text-[10px] text-slate-400 font-mono mt-1">
-                  <span>18 Yrs</span>
-                  <span>40 Yrs</span>
-                  <span>65 Yrs</span>
-                </div>
-              </div>
+          {/* Right Column: Contact CTA Cards */}
+          <div className="lg:col-span-5 space-y-6">
+            <div>
+              <h2 className="text-3xl font-extrabold text-slate-900">Let's Plan Your Secure Future</h2>
+              <p className="text-sm text-slate-500 mt-1">I'm here to help you choose the right plan.</p>
             </div>
 
-            {/* Dynamic Results Card */}
-            <div className="bg-slate-900 text-white rounded-xl p-5 border border-slate-800 shadow-md relative overflow-hidden h-full flex flex-col justify-between">
-              <div className="absolute top-0 right-0 p-3 opacity-10">
-                <Sparkles className="h-16 w-16 text-orange-400" />
-              </div>
-
-              <div className="space-y-3">
-                <div className="flex items-center space-x-1 text-orange-400 text-xs font-mono font-bold uppercase tracking-wider">
-                  <CheckCircle className="h-4 w-4" />
-                  <span>AI Recommended Insurance Plan</span>
-                </div>
-
-                {INSURANCE_PLANS.filter(p => p.id === recommendedPlanId).map(p => (
-                  <div key={p.id} className="space-y-2">
-                    <h3 className="text-lg font-black text-white">{p.title}</h3>
-                    <p className="text-xs text-slate-300 leading-relaxed">{p.tagline}</p>
-                    
-                    <div className="border-t border-slate-800 pt-3 mt-3">
-                      <span className="text-[10px] uppercase text-slate-400 font-mono tracking-widest block mb-1">Key Advantages:</span>
-                      <ul className="space-y-1 text-xs text-slate-300">
-                        {p.benefits.slice(0, 3).map((b, i) => (
-                          <li key={i} className="flex items-start space-x-1.5">
-                            <span className="text-emerald-400 font-bold">•</span>
-                            <span>{b}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <button
-                onClick={() => openQuoteForPlan(recommendedPlanId)}
-                className="mt-6 w-full py-2.5 bg-orange-500 hover:bg-orange-600 text-white text-xs font-bold rounded-lg transition-all shadow-md flex items-center justify-center space-x-1.5 cursor-pointer"
+            <div className="space-y-3">
+              {/* WhatsApp CTA */}
+              <a
+                href="https://wa.me/919876543210?text=Hi%20Sahiti,%20I'd%20like%20to%20plan%20my%20future%20investments."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between p-4 bg-white hover:bg-slate-50 border border-slate-100 rounded-xl shadow-2xs hover:shadow-xs transition-all"
               >
-                <span>Calculate Premium</span>
-                <ArrowRight className="h-4 w-4" />
-              </button>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* 3. Core Insurance Plans Section */}
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8" id="products-catalog-section">
-        <div className="text-center max-w-2xl mx-auto mb-12">
-          <span className="text-orange-500 font-extrabold uppercase text-xs tracking-widest">Plan Options</span>
-          <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 mt-1">Core Insurance Ecosystem</h2>
-          <p className="text-sm text-slate-500 mt-2">
-            Engineered keeping modern financial realities in focus. Partner with us to advise clients on highly custom plans.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="home-plans-grid">
-          {INSURANCE_PLANS.map((plan) => (
-            <div
-              key={plan.id}
-              className="bg-white rounded-xl border border-blue-50 shadow-xs hover:shadow-md transition-all flex flex-col justify-between overflow-hidden"
-            >
-              <div className="p-5">
-                <span className="text-[10px] uppercase font-mono font-bold px-2 py-1 bg-blue-50 text-blue-700 rounded-sm">
-                  Starting @ ₹{plan.minPremium}/mo*
-                </span>
-                <h3 className="text-lg font-bold text-slate-900 mt-3">{plan.title}</h3>
-                <p className="text-xs text-slate-500 mt-1.5 leading-relaxed min-h-[48px]">{plan.tagline}</p>
-                
-                <ul className="space-y-1.5 text-xs text-slate-600 mt-4 pt-4 border-t border-slate-100">
-                  {plan.benefits.slice(0, 2).map((benefit, index) => (
-                    <li key={index} className="flex items-start space-x-1.5">
-                      <span className="text-orange-500 font-bold mt-0.5">•</span>
-                      <span className="text-[11px]">{benefit}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="p-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
-                <span className="text-[10px] text-slate-400 font-mono">Entry: {plan.entryAge}</span>
-                <button
-                  onClick={() => openQuoteForPlan(plan.id)}
-                  className="text-xs font-bold text-blue-600 hover:text-blue-800 flex items-center space-x-1 cursor-pointer"
-                >
-                  <span>Select</span>
-                  <ArrowRight className="h-3.5 w-3.5" />
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* 4. "Why Choose Our Partnership" Section */}
-      <section className="bg-white py-16 px-4 border-y border-slate-100" id="partnership-why-choose">
-        <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          
-          <div className="lg:col-span-6 space-y-6">
-            <span className="text-blue-600 font-black uppercase text-xs tracking-widest block">Incorporate & Scale</span>
-            <h2 className="text-3xl font-extrabold tracking-tight text-slate-900">
-              Why Choose Our Strategic Retail Partnership?
-            </h2>
-            <p className="text-sm text-slate-600 leading-relaxed">
-              We empower retail stores, individual agents, wealth advisors, and entrepreneurs to convert client relationships into highly sustainable insurance advisory businesses.
-            </p>
-
-            {/* Feature lists in layout */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6" id="why-choose-features">
-              {[
-                { title: 'Generous commission models', desc: 'Continuous residual commission structures on every milestone renewal fee.' },
-                { title: 'Zero barrier e-onboarding', desc: 'No heavy manual verification. Real-time digital KYC approvals.' },
-                { title: 'Dedicated Relationship Manager', desc: 'Personal coaching sessions directly backed by nearby branch veterans.' },
-                { title: 'Automated Quote Generator', desc: 'Design deep pricing tables and forward customized brochures on WhatsApp instantly.' },
-              ].map((item, index) => (
-                <div key={index} className="border border-slate-100 p-4 rounded-xl shadow-2xs hover:shadow-xs transition-all">
-                  <h4 className="text-xs font-bold text-slate-800 flex items-center space-x-1.5">
-                    <span className="h-2 w-2 rounded-full bg-orange-500"></span>
-                    <span>{item.title}</span>
-                  </h4>
-                  <p className="text-[11px] text-slate-500 mt-1 leading-relaxed">{item.desc}</p>
+                <div className="flex items-center space-x-3.5">
+                  <div className="p-2.5 bg-emerald-50 text-emerald-600 rounded-full">
+                    <svg className="h-5 w-5 fill-current" viewBox="0 0 24 24">
+                      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.504-5.717-1.465L0 24zm6.26-4.148c1.657.983 3.327 1.498 5.694 1.499 5.539 0 10.05-4.48 10.054-9.988.002-2.67-1.026-5.18-2.894-7.052C17.29 2.44 14.78 1.41 12.016 1.41 6.502 1.41 1.992 5.89 1.988 11.399c-.001 2.222.548 4.39 1.587 6.189l-.993 3.626 3.735-.972zm12.39-7.25c-.269-.134-1.593-.787-1.839-.877-.247-.09-.427-.135-.607.135-.18.27-.697.877-.855 1.057-.157.18-.315.202-.584.067-.27-.134-1.14-.42-2.172-1.341-.803-.715-1.344-1.602-1.502-1.872-.158-.27-.017-.417.118-.552.122-.122.27-.315.405-.472.135-.157.18-.27.27-.45.09-.18.045-.337-.023-.472-.068-.135-.607-1.463-.832-2.003-.22-.528-.44-.456-.607-.464-.157-.008-.337-.009-.517-.009-.18 0-.472.067-.719.337-.247.27-.944.923-.944 2.25s.967 2.61 1.102 2.79c.135.18 1.902 2.904 4.609 4.074.644.278 1.147.445 1.538.569.647.206 1.236.177 1.701.107.518-.078 1.593-.652 1.819-1.282.225-.63.225-1.17.157-1.282-.068-.112-.247-.202-.516-.337z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="text-xs font-bold text-slate-800">Talk on WhatsApp</h4>
+                    <p className="text-[10px] text-slate-500 mt-0.5">Get instant help & quotes</p>
+                  </div>
                 </div>
-              ))}
-            </div>
-          </div>
+                <ArrowRight className="h-4 w-4 text-slate-400" />
+              </a>
 
-          <div className="lg:col-span-6 relative" id="why-choose-handshake-wrapper">
-            <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-blue-500 to-indigo-600 opacity-20 blur-lg" />
-            <div className="relative rounded-2xl overflow-hidden border border-slate-200 shadow-xl bg-slate-100">
-              <img
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBKU-GJIFbjUyEMZdEJs7zd-d-mWAr7-TpiNr0IXCX6zFT9DyXylfhfmUZ8cIxBnA3JuXsxN5kxVJJzSxSyYgjX7GXB825mIv9rC944IU5_7tgw8qws8_EcevToD2gjJBvmTu7jbLpNxAk-KLNtzWOJ3_P0Yv3k-2P10OWpolJOXbSakwUzQdWUyHFh1czWAdiRRJD_yzp--RP-jYkW47YgQFzocN0a4I_9frsdUxhw72efUmsfMyWi9b1kFMxty0aU_loZt6Q_wc"
-                alt="Two businessmen sealing strategic insurance partnership with handshake"
-                referrerPolicy="no-referrer"
-                className="w-full h-auto object-cover max-h-[380px] hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      {/* 5. Consultation Intake Form Section */}
-      <section className="bg-linear-to-b from-slate-50 to-blue-50/50 py-16 px-4" id="consultation-section">
-        <div className="mx-auto max-w-xl bg-white border border-blue-100 p-6 sm:p-8 rounded-2xl shadow-md relative">
-          
-          <div className="text-center mb-6">
-            <span className="text-blue-700 font-extrabold uppercase text-xs tracking-widest">Consultation Intake</span>
-            <h3 className="text-2xl font-black text-slate-900 mt-1">Get a Personalized Consultation</h3>
-            <p className="text-xs text-slate-500 mt-1">
-              Provide your details and primary interests; a certified Bajaj Goals Expert will contact you under 2 working hours.
-            </p>
-          </div>
-
-          <AnimatePresence>
-            {formSuccess ? (
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                className="bg-emerald-50 border border-emerald-200 text-emerald-800 p-5 rounded-lg text-center"
-                id="consultation-success-msg"
+              {/* Call CTA */}
+              <a
+                href="tel:+919876543210"
+                className="flex items-center justify-between p-4 bg-white hover:bg-slate-50 border border-slate-100 rounded-xl shadow-2xs hover:shadow-xs transition-all"
               >
-                <CheckCircle className="h-10 w-10 text-emerald-600 mx-auto mb-2 animate-bounce" />
-                <h4 className="font-extrabold text-sm">Thank You for Inquiring!</h4>
-                <p className="text-xs text-emerald-700 mt-1">
-                  Your reference ID <strong className="font-mono text-[11px]">BC-{Math.floor(Math.random() * 89999 + 10000)}</strong> has been registered. Our wealth experts are reviewing your portfolio request.
-                </p>
-              </motion.div>
-            ) : (
-              <form onSubmit={handleFormSubmit} className="space-y-4" id="consultation-intake-form">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-xs font-bold text-slate-700 mb-1">Your Full Name *</label>
-                    <input
-                      type="text"
-                      required
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      placeholder="e.g. Ramesh Kumar"
-                      className="w-full text-xs font-medium border border-slate-200 rounded-md p-2.5 outline-hidden focus:border-blue-600 focus:ring-1 focus:ring-blue-100"
-                    />
+                <div className="flex items-center space-x-3.5">
+                  <div className="p-2.5 bg-blue-50 text-blue-600 rounded-full">
+                    <Phone className="h-5 w-5" />
                   </div>
                   <div>
-                    <label className="block text-xs font-bold text-slate-700 mb-1">Email Address *</label>
-                    <input
-                      type="email"
-                      required
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      placeholder="ramesh@gmail.com"
-                      className="w-full text-xs font-medium border border-slate-200 rounded-md p-2.5 outline-hidden focus:border-blue-600 focus:ring-1 focus:ring-blue-100"
-                    />
+                    <h4 className="text-xs font-bold text-slate-800">Call Me</h4>
+                    <p className="text-[10px] text-slate-500 mt-0.5">+91 98765 43210</p>
                   </div>
                 </div>
+                <ArrowRight className="h-4 w-4 text-slate-400" />
+              </a>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-xs font-bold text-slate-700 mb-1">Mobile Number *</label>
-                    <input
-                      type="tel"
-                      required
-                      value={formData.phone}
-                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      placeholder="e.g. 9876543210"
-                      pattern="^[6789]\d{9}$"
-                      title="Please enter a valid 10-digit Indian phone number"
-                      className="w-full text-xs font-medium border border-slate-200 rounded-md p-2.5 outline-hidden focus:border-blue-600 focus:ring-1 focus:ring-blue-100"
-                    />
+              {/* Email CTA */}
+              <a
+                href="mailto:sahitikotturty@gmail.com"
+                className="flex items-center justify-between p-4 bg-white hover:bg-slate-50 border border-slate-100 rounded-xl shadow-2xs hover:shadow-xs transition-all"
+              >
+                <div className="flex items-center space-x-3.5">
+                  <div className="p-2.5 bg-blue-50 text-blue-600 rounded-full">
+                    <Mail className="h-5 w-5" />
                   </div>
                   <div>
-                    <label className="block text-xs font-bold text-slate-700 mb-1">Area Pincode *</label>
-                    <input
-                      type="text"
-                      required
-                      maxLength={6}
-                      value={formData.pincode}
-                      onChange={(e) => setFormData({ ...formData, pincode: e.target.value.replace(/\D/g, '') })}
-                      placeholder="e.g. 400001"
-                      className="w-full text-xs font-medium border border-slate-200 rounded-md p-2.5 outline-hidden focus:border-blue-600 focus:ring-1 focus:ring-blue-100"
-                    />
+                    <h4 className="text-xs font-bold text-slate-800">Email Me</h4>
+                    <p className="text-[10px] text-slate-500 mt-0.5">sahitikotturty@gmail.com</p>
                   </div>
                 </div>
+                <ArrowRight className="h-4 w-4 text-slate-400" />
+              </a>
+            </div>
+          </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-xs font-bold text-slate-700 mb-1">Insurance Interest *</label>
-                    <select
-                      value={formData.insuranceInterest}
-                      onChange={(e) => setFormData({ ...formData, insuranceInterest: e.target.value })}
-                      className="w-full text-xs font-medium border border-slate-200 rounded-md p-2.5 bg-white outline-hidden focus:border-blue-600"
-                    >
-                      <option value="term-life">Term Life Insurance</option>
-                      <option value="savings">Wealth & Savings Plans</option>
-                      <option value="retirement">Retirement & Annuity</option>
-                      <option value="child">Child Future Plans</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label className="block text-xs font-bold text-slate-700 mb-1">Preferred Time Callback</label>
-                    <select
-                      value={formData.preferredTime}
-                      onChange={(e) => setFormData({ ...formData, preferredTime: e.target.value })}
-                      className="w-full text-xs font-medium border border-slate-200 rounded-md p-2.5 bg-white outline-hidden focus:border-blue-600"
-                    >
-                      <option value="morning">Morning (09:00 AM - 12:00 PM)</option>
-                      <option value="afternoon">Afternoon (12:00 PM - 04:00 PM)</option>
-                      <option value="evening">Evening (04:00 PM - 07:00 PM)</option>
-                    </select>
-                  </div>
-                </div>
-
-                <button
-                  type="submit"
-                  id="btn-submit-consultation"
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold p-3 rounded-lg mt-4 transition-all shadow-sm flex items-center justify-center space-x-1 cursor-pointer"
-                >
-                  <span>Submit Consultation Request</span>
-                  <ArrowRight className="h-4 w-4" />
-                </button>
-              </form>
-            )}
-          </AnimatePresence>
         </div>
       </section>
 
-      {/* 6. Partner/Corporate Logos Strip */}
-      <section className="bg-slate-900 border-t border-slate-800 py-10 px-4 text-center">
-        <p className="text-[10px] text-slate-400 font-mono tracking-widest uppercase mb-4">Strategic Banking & Alliance Integrators</p>
-        <div className="mx-auto max-w-5xl flex flex-wrap justify-center items-center gap-8 sm:gap-12 opacity-40 grayscale group hover:opacity-75 transition-opacity" id="partners-alliances">
-          {[
-            { name: 'BAJAJ FINSERV', label: 'BAJAJ FINSERV' },
-            { name: 'ALLIANZ SE', label: 'ALLIANZ GROUP' },
-            { name: 'AXIS BANK', label: 'AXIS BANK NETWORK' },
-            { name: 'HDFC BANK', label: 'HDFC ALLIANCE' },
-            { name: 'SBI GROUP', label: 'SBI LIQUIDITY' }
-          ].map((partner, index) => (
-            <div key={index} className="text-white text-sm font-black tracking-widest font-mono">
-              {partner.name}
-            </div>
-          ))}
+      {/* 5. Highlight Badges Footer Bar */}
+      <section className="bg-blue-900 py-10 px-4 text-white">
+        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="flex flex-col items-center text-center space-y-2">
+            <ShieldCheck className="h-7 w-7 text-orange-400" />
+            <h4 className="text-xs font-bold uppercase tracking-wider">Wide Range of Plans</h4>
+            <p className="text-[10px] text-blue-200">Savings, Protection, Retirement & more</p>
+          </div>
+          <div className="flex flex-col items-center text-center space-y-2">
+            <Lock className="h-7 w-7 text-orange-400" />
+            <h4 className="text-xs font-bold uppercase tracking-wider">100% Secure</h4>
+            <p className="text-[10px] text-blue-200">Your data is safe with us</p>
+          </div>
+          <div className="flex flex-col items-center text-center space-y-2">
+            <Users className="h-7 w-7 text-orange-400" />
+            <h4 className="text-xs font-bold uppercase tracking-wider">Expert Support</h4>
+            <p className="text-[10px] text-blue-200">I'm just a call away</p>
+          </div>
+          <div className="flex flex-col items-center text-center space-y-2">
+            <Clock className="h-7 w-7 text-orange-400" />
+            <h4 className="text-xs font-bold uppercase tracking-wider">Always With You</h4>
+            <p className="text-[10px] text-blue-200">After-sales support you can count on</p>
+          </div>
         </div>
       </section>
 

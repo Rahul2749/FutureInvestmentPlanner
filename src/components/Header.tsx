@@ -24,8 +24,9 @@ export default function Header({
   ];
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-blue-100 bg-white shadow-xs" id="main-header">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+    <header className="sticky top-0 z-40 w-full border-b border-slate-100 bg-white shadow-xs" id="main-header">
+      {/* Top Header Bar */}
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 border-b border-slate-100">
         
         {/* Logo and Branding Section */}
         <div 
@@ -33,39 +34,29 @@ export default function Header({
           onClick={() => setActiveTab('home')}
           id="header-brand-container"
         >
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-600 text-white shadow-md">
+          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-600 text-white shadow-xs">
             <ShieldCheck className="h-6 w-6" />
           </div>
           <div className="flex flex-col">
             <span className="font-sans text-lg font-extrabold tracking-tight text-blue-900 sm:text-xl">
-              BAJAJ <span className="text-orange-500">Allianz</span>
+              BAJAJ <span className="text-orange-500 font-bold">Life Insurance</span>
             </span>
-            <span className="font-mono text-[9px] font-medium uppercase tracking-widest text-slate-500">
+            <span className="font-mono text-[9px] font-medium uppercase tracking-widest text-slate-400">
               Life Goals Partner
             </span>
           </div>
         </div>
 
-        {/* Navigation Elements */}
-        <nav className="hidden md:flex items-center space-x-1" id="desktop-nav">
-          {navItems.map((item) => (
-            <button
-              key={item.id}
-              id={`nav-tab-${item.id}`}
-              onClick={() => setActiveTab(item.id)}
-              className={`px-4 py-2 text-sm font-semibold rounded-md transition-all duration-200 ${
-                activeTab === item.id
-                  ? 'bg-blue-50 text-blue-700 font-bold border-b-2 border-blue-600 rounded-b-none'
-                  : 'text-slate-600 hover:text-blue-600 hover:bg-slate-50'
-              }`}
-            >
-              {item.label}
-            </button>
-          ))}
-        </nav>
+        {/* Right Side Info & Action Buttons */}
+        <div className="flex items-center space-x-4" id="header-right-actions">
+          {/* Agent/Advisor Info */}
+          <div className="hidden sm:flex flex-col text-right pr-4 border-r border-slate-200">
+            <span className="text-sm font-extrabold text-slate-800">Sahiti Kotturty</span>
+            <span className="text-[11px] font-medium text-blue-600 bg-blue-50 px-2 py-0.5 rounded-full mt-0.5 inline-block">
+              RP Code: BAL123456
+            </span>
+          </div>
 
-        {/* Action Buttons */}
-        <div className="flex items-center space-x-3" id="header-actions">
           {/* Inquiry Indicator button */}
           <button
             onClick={openInquiryStatusModal}
@@ -82,17 +73,51 @@ export default function Header({
             )}
           </button>
 
-          {/* Core Get Quote CTAs */}
+          {/* WhatsApp Quick CTA Icon */}
+          <a
+            href="https://wa.me/919876543210?text=Hi%20Sahiti,%20I'm%20interested%20in%20learning%20more%20about%20Bajaj%20Life%20Insurance%20plans."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex h-9 w-9 items-center justify-center rounded-full bg-emerald-500 text-white hover:bg-emerald-600 shadow-xs hover:scale-105 transition-all"
+            title="Talk to Sahiti on WhatsApp"
+          >
+            <svg className="h-5 w-5 fill-current" viewBox="0 0 24 24">
+              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.504-5.717-1.465L0 24zm6.26-4.148c1.657.983 3.327 1.498 5.694 1.499 5.539 0 10.05-4.48 10.054-9.988.002-2.67-1.026-5.18-2.894-7.052C17.29 2.44 14.78 1.411 12.016 1.41 6.502 1.41 1.992 5.89 1.988 11.399c-.001 2.222.548 4.39 1.587 6.189l-.993 3.626 3.735-.972zm12.39-7.25c-.269-.134-1.593-.787-1.839-.877-.247-.09-.427-.135-.607.135-.18.27-.697.877-.855 1.057-.157.18-.315.202-.584.067-.27-.134-1.14-.42-2.172-1.341-.803-.715-1.344-1.602-1.502-1.872-.158-.27-.017-.417.118-.552.122-.122.27-.315.405-.472.135-.157.18-.27.27-.45.09-.18.045-.337-.023-.472-.068-.135-.607-1.463-.832-2.003-.22-.528-.44-.456-.607-.464-.157-.008-.337-.009-.517-.009-.18 0-.472.067-.719.337-.247.27-.944.923-.944 2.25s.967 2.61 1.102 2.79c.135.18 1.902 2.904 4.609 4.074.644.278 1.147.445 1.538.569.647.206 1.236.177 1.701.107.518-.078 1.593-.652 1.819-1.282.225-.63.225-1.17.157-1.282-.068-.112-.247-.202-.516-.337z"/>
+            </svg>
+          </a>
+
+          {/* Core Get Quote CTA */}
           <button
             onClick={openQuoteModal}
             id="header-btn-quote"
-            className="flex items-center space-x-1 rounded-md bg-blue-600 hover:bg-blue-700 px-4 py-2 text-sm font-semibold text-white transition-all shadow-sm hover:shadow-md cursor-pointer"
+            className="flex items-center space-x-1 rounded-md bg-orange-500 hover:bg-orange-600 px-4 py-2 text-sm font-semibold text-white transition-all shadow-xs hover:shadow-sm cursor-pointer"
           >
             <span>Get a Quote</span>
             <ChevronRight className="h-4 w-4" />
           </button>
         </div>
+      </div>
 
+      {/* Navigation Sub-bar */}
+      <div className="hidden md:block bg-slate-50 border-b border-slate-100">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <nav className="flex items-center justify-center space-x-8 h-11" id="desktop-nav">
+            {navItems.map((item) => (
+              <button
+                key={item.id}
+                id={`nav-tab-${item.id}`}
+                onClick={() => setActiveTab(item.id)}
+                className={`h-full px-2 text-sm font-bold transition-all relative ${
+                  activeTab === item.id
+                    ? 'text-blue-700 font-extrabold border-b-2 border-blue-600'
+                    : 'text-slate-600 hover:text-blue-600'
+                }`}
+              >
+                {item.label}
+              </button>
+            ))}
+          </nav>
+        </div>
       </div>
 
       {/* Mobile nav indicator bar */}

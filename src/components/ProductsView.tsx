@@ -382,7 +382,7 @@ export default function ProductsView({ openQuoteForPlan }: ProductsViewProps) {
                 <span>Interactive Application Tracker</span>
               </h4>
               <p className="text-[11px] text-slate-500 mb-4">
-                Enter your Bajaj Allianz proposal/application number to fetch dynamic processing updates.
+                Enter your Bajaj Life proposal/application number to fetch dynamic processing updates.
               </p>
 
               <form onSubmit={handleTrackSearch} className="flex gap-2 mb-2">

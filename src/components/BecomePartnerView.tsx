@@ -95,7 +95,7 @@ export default function BecomePartnerView({ onSubmitInquiry }: BecomePartnerView
               <span className="text-orange-400">Life Goals Partner</span>
             </h1>
             <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-xl">
-              Turn your local relationships into a sustainable wealth advisory brand. Bajaj Allianz Life provides the infrastructure, digital apps, continuous learning support, and high financial commission scales.
+              Turn your local relationships into a sustainable wealth advisory brand. Bajaj Life provides the infrastructure, digital apps, continuous learning support, and high financial commission scales.
             </p>
             <div className="flex space-x-6 text-xs text-slate-300 py-2 border-t border-white/10 max-w-lg">
               <div>
@@ -131,7 +131,7 @@ export default function BecomePartnerView({ onSubmitInquiry }: BecomePartnerView
         <div className="text-center max-w-2xl mx-auto mb-12">
           <span className="text-blue-600 font-extrabold uppercase text-xs tracking-widest">Enrolment Rewards</span>
           <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 mt-1">Strategic Partnership Benefits</h2>
-          <p className="text-sm text-slate-500 mt-2">Discover how Bajaj Allianz supports your agency goals systematically from registration day one.</p>
+          <p className="text-sm text-slate-500 mt-2">Discover how Bajaj Life supports your agency goals systematically from registration day one.</p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="benefits-grid">
@@ -389,7 +389,7 @@ export default function BecomePartnerView({ onSubmitInquiry }: BecomePartnerView
                         </div>
 
                         <div className="bg-blue-50 p-3 rounded-lg border border-blue-100 text-[10px] text-blue-800 leading-relaxed">
-                          By confirming, you agree to receive digital onboarding communication, SMS, and phone calls from accredited Bajaj Allianz Life Agency Managers.
+                          By confirming, you agree to receive digital onboarding communication, SMS, and phone calls from accredited Bajaj Life Agency Managers.
                         </div>
 
                         <div className="grid grid-cols-2 gap-3 pt-2">
@@ -426,7 +426,7 @@ export default function BecomePartnerView({ onSubmitInquiry }: BecomePartnerView
         <div className="text-center max-w-2xl mx-auto mb-12">
           <span className="text-blue-600 font-extrabold uppercase text-xs tracking-widest block">Accredited Testimonials</span>
           <h2 className="text-3xl font-black text-slate-900 mt-1">Success Stories from Our Network</h2>
-          <p className="text-sm text-slate-500 mt-2">See how everyday professionals scaled their independent businesses inside the Bajaj Allianz ecosystem.</p>
+          <p className="text-sm text-slate-500 mt-2">See how everyday professionals scaled their independent businesses inside the Bajaj Life ecosystem.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8" id="stories-grid">
