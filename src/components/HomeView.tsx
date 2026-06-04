@@ -290,8 +290,8 @@ export default function HomeView({ setActiveTab, openQuoteForPlan }: HomeViewPro
       </section>
 
       {/* Join Our Team Section */}
-      <section className="bg-[#005AAA] py-16 px-4 sm:px-8 lg:px-16 text-white overflow-hidden relative">
-        <div className="max-w-none mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+      <section className="bg-[#005AAA] py-10 px-4 sm:px-8 lg:px-16 text-white overflow-hidden relative">
+        <div className="max-w-none mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
           
           {/* Left Content */}
           <div className="lg:col-span-6 space-y-6">
@@ -350,11 +350,11 @@ export default function HomeView({ setActiveTab, openQuoteForPlan }: HomeViewPro
 
           {/* Right Content */}
           <div className="lg:col-span-6 relative">
-            <div className="bg-white p-2 rounded-[2rem] shadow-2xl transform md:rotate-2 hover:rotate-0 transition-transform duration-500 max-w-[500px] ml-auto">
+            <div className="bg-white p-2 rounded-[2rem] shadow-2xl transform md:rotate-2 hover:rotate-0 transition-transform duration-500 max-w-2xl ml-auto w-full">
               <img 
                 src="/team_meeting.png" 
                 alt="Financial Advisor Team Meeting" 
-                className="w-full h-auto object-cover rounded-[1.5rem]"
+                className="w-full object-cover rounded-[1.5rem] aspect-[4/3]"
               />
             </div>
           </div>
