@@ -24,6 +24,13 @@ export default function App() {
 
   // Hydrate persistent state from browser storage
   useEffect(() => {
+    // Prevent browser from restoring previous scroll position on refresh
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+    // Scroll to top on initial load
+    window.scrollTo(0, 0);
+
     try {
       const storedPartners = localStorage.getItem('bal_partner_inquiries');
       if (storedPartners) setPartnerInquiries(JSON.parse(storedPartners));
@@ -37,6 +44,11 @@ export default function App() {
       console.warn('LocalStorage error, running in transient virtual state modes instead:', e);
     }
   }, []);
+
+  // Also scroll to top whenever the active tab changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [activeTab]);
 
   // Save changes hooks
   const savePartnerInquiries = (updated: PartnerInquiry[]) => {
